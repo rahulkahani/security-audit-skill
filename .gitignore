@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+audit-output/
+reports/
+.env*
+.DS_Store

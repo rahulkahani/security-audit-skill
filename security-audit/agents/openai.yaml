@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Audit"
+  short_description: "Read-only exposure inventory with evidence and gaps"
+  default_prompt: "Use $security-audit to review my specified sources and produce a private evidence-based checklist without changing accounts or reading secrets."

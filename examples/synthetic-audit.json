@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-05",
+  "scope": "Synthetic demonstration only. Sanitized mail summary, app-grant inventory and one manifest; no real accounts accessed.",
+  "summary": "Review the broad write grant first. The old email is only an account candidate, and dependency risk needs resolved versions. Key coverage is blocked.",
+  "next_step": "Have the owner decide whether Example Sync needs all-repository write access, then obtain the minimum metadata needed for a scoped change proposal.",
+  "coverage": [
+    {"category": "accounts", "status": "partial", "detail": "Fixture mail-summary-01 covers one old welcome message; account existence and usage not verified."},
+    {"category": "permissions", "status": "checked", "detail": "Fixture grant-export-01 reviewed in full; one invented grant, observed 2026-11-05."},
+    {"category": "keys", "status": "blocked", "detail": "No metadata-only inventory supplied; no credential files opened."},
+    {"category": "ai-connectors", "status": "not-requested", "detail": "Outside this demonstration's source scope."},
+    {"category": "dependencies", "status": "partial", "detail": "Fixture manifest-01 has a version range but no lockfile; no external advisory query or package execution."},
+    {"category": "app-launch", "status": "not-requested", "detail": "No deployment review requested."}
+  ],
+  "findings": [
+    {
+      "id": "F-001", "category": "accounts", "item": "Example Notes / account-A",
+      "evidence": "mail-summary-01 row 1: welcome email dated 2021-04-12. Inference: possible forgotten account; not evidence of last login or present account existence.",
+      "observed_at": "2026-11-05", "state": "candidate", "confidence": "low", "severity": "informational", "priority": "later",
+      "impact": "Possible retained account/data; no sensitive permissions or current use established. Age alone does not establish risk.",
+      "action": "Verify account existence and current need through the independently opened official account page.",
+      "action_readiness": "needs-evidence",
+      "decision": "pending", "retest": "Owner confirms account status and required data retention; record dated metadata only."
+    },
+    {
+      "id": "F-002", "category": "permissions", "item": "Example Sync / tenant-B",
+      "evidence": "grant-export-01 row 1 explicitly shows all-repository write access. Last-used field is absent; inactivity is unknown.",
+      "observed_at": "2026-11-05", "state": "confirmed", "confidence": "high", "severity": "medium", "priority": "this-week",
+      "impact": "Broad write access could affect multiple projects if the integration is compromised; necessity is not established.",
+      "action": "Confirm which workflows depend on the grant and whether repository-scoped access is sufficient; propose a change for owner review.",
+      "action_readiness": "review-now",
+      "decision": "pending", "retest": "Dated grant metadata and owner decision establish required scope; any change verified in a separately authorized task."
+    },
+    {
+      "id": "F-003", "category": "dependencies", "item": "Example App / dependency inventory",
+      "evidence": "manifest-01 declares a development dependency range. No resolved version or current advisory evidence supplied.",
+      "observed_at": "2026-11-05", "state": "unknown", "confidence": "low", "severity": "unknown", "priority": "investigate",
+      "impact": "Version-specific vulnerability status cannot be established; build dependencies remain in scope.",
+      "action": "Provide a sanitized lockfile-derived inventory, including development and transitive packages, before any advisory comparison.",
+      "action_readiness": "needs-evidence",
+      "decision": "pending", "retest": "Exact package versions and dated official advisory evidence establish applicability without executing the project."
+    }
+  ],
+  "limitations": [
+    "All records are invented fixtures; this demonstrates report formatting, not an actual security audit.",
+    "No credentials read or tested, no live account settings inspected, no network vulnerability scans, no code execution or remediation.",
+    "Missing evidence does not establish safety; historical email does not establish current account usage."
+  ]
+}
